@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Grey Moon — Sales Trend — June 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2E2621; --paper:#EDE4CF; --card:#F7F1E4; --line:#D8CBAB; --linelight:#E3D8BC;
+    --muted:#6B6155; --mutedlight:#8A8072; --gold:#B7A87E;
+    --fri:#B99A57; --sat:#C1793C; --sun:#8E4A62;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',Arial,sans-serif;background:var(--paper);color:var(--ink);}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7C8B6F;}
+  .serif{font-family:'Fraunces',Georgia,serif;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px;}
+  header{padding:40px 32px 28px;border-bottom:1px solid var(--line);}
+  h1{font-size:clamp(28px,4vw,42px);font-weight:600;margin:8px 0 6px;line-height:1.1;}
+  .sub{font-size:15px;color:var(--muted);}
+  .kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border-bottom:1px solid var(--line);}
+  .kpi{background:var(--paper);padding:20px 20px;}
+  .kpi .val{font-size:24px;font-weight:600;margin-top:4px;}
+  main{padding:32px;display:flex;flex-direction:column;gap:28px;}
+  .mono{font-family:'IBM Plex Mono',monospace;color:var(--muted);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .callout-big{border:1px solid #D9B2C4;background:#F7E9EF;border-radius:10px;padding:18px 22px;display:flex;gap:16px;align-items:flex-start;}
+  .callout-big .num{font-size:32px;font-weight:700;color:var(--sun);line-height:1;flex-shrink:0;}
+  .callout-big .title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px;}
+  .callout-big .body{font-size:13px;color:var(--muted);}
+  .legend-row{display:flex;gap:20px;margin-top:12px;justify-content:center;}
+  .legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);}
+  .dot{width:10px;height:10px;border-radius:3px;display:inline-block;flex-shrink:0;}
+  .bars{display:flex;align-items:flex-end;gap:10px;height:240px;padding:0 4px;}
+  .bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;}
+  .bar{width:100%;max-width:36px;border-radius:4px 4px 0 0;position:relative;}
+  .bar-val{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:4px;white-space:nowrap;}
+  .bar-date{font-size:11px;color:var(--muted);margin-top:8px;}
+  .wk-row{margin-bottom:12px;}
+  .wk-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;}
+  .wk-track{background:var(--linelight);height:10px;border-radius:3px;}
+  .wk-fill{background:var(--sat);height:10px;border-radius:3px;}
+  .mix-bar{display:flex;height:24px;border-radius:6px;overflow:hidden;margin-bottom:16px;}
+  .center-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;margin-bottom:10px;}
+  footer{font-size:11px;color:var(--gold);font-family:'IBM Plex Mono',monospace;text-align:center;padding:8px 0 32px;}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr;}.kpi-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">JUNE 2026 · SERVICE REPORT · PART 2</div>
+  <h1 class="serif">Grey Moon Breakfast &amp; Brunch</h1>
+  <div class="sub">Daily sales trend &amp; revenue center mix · June 1 – June 30, 2026 · Source: Toast POS sales export</div>
+</header>
+
+<div class="kpi-grid">
+  <div class="kpi"><div class="eyebrow">Net Sales</div><div class="val serif">$32,071</div></div>
+  <div class="kpi"><div class="eyebrow">Checks</div><div class="val serif">883</div></div>
+  <div class="kpi"><div class="eyebrow">Avg Check</div><div class="val serif">$36.32</div></div>
+  <div class="kpi"><div class="eyebrow">Guests</div><div class="val serif">627</div></div>
+  <div class="kpi"><div class="eyebrow">Sales / Guest</div><div class="val serif">$24.35</div></div>
+</div>
+
+<main>
+
+  <div class="callout-big">
+    <div class="num serif">9.3×</div>
+    <div>
+      <div class="title">Saturdays out-earn Fridays by 9.3× — every single week</div>
+      <div class="body">Grey Moon operates Friday–Sunday only. Fridays averaged just <strong>$454.28</strong>/day
+        vs. <strong>$4,220.20</strong> on Saturdays and <strong>$3,343.37</strong> on Sundays —
+        Friday contributes only <strong>5.7%</strong> of weekend revenue despite being a full service day.
+        Worth testing: reduced Friday hours/staffing, a different concept (e.g. dinner service), or a
+        Friday-specific promotion to justify keeping it open as brunch.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">DAILY TREND</div>
+    <h2 class="serif" style="font-size:20px;font-weight:600;margin:0 0 4px;">Net sales by service day</h2>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:20px;">Every open day in June, colored by day of week. The weekend rhythm — and Week 4's strong close — stand out clearly.</div>
+    <div class="bars" id="dailyBars"></div>
+    <div class="legend-row">
+      <div class="legend-item"><span class="dot" style="background:var(--fri)"></span>Friday</div>
+      <div class="legend-item"><span class="dot" style="background:var(--sat)"></span>Saturday</div>
+      <div class="legend-item"><span class="dot" style="background:var(--sun)"></span>Sunday</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="eyebrow">MOMENTUM</div>
+      <h2 class="serif" style="font-size:18px;font-weight:600;margin:0 0 16px;">Week-over-week revenue</h2>
+      <div id="weeklyList"></div>
+      <div style="font-size:12px;color:var(--mutedlight);margin-top:14px;">Revenue nearly doubled from Week 1 to Week 4, driven mostly by Saturday growth (+40% from first to last Saturday).</div>
+    </div>
+
+    <div class="card">
+      <div class="eyebrow">FLOOR MIX</div>
+      <h2 class="serif" style="font-size:18px;font-weight:600;margin:0 0 16px;">Revenue by seating area</h2>
+      <div class="mix-bar">
+        <div style="width:70.8%;background:#C1793C" title="Dining Room: 70.8%"></div>
+        <div style="width:17.0%;background:#8C9A7B" title="Patio: 17.0%"></div>
+        <div style="width:12.2%;background:#5B7380" title="Bar: 12.2%"></div>
+      </div>
+      <div id="centerList"></div>
+      <div style="font-size:12px;color:var(--mutedlight);margin-top:14px;">Patio out-earns the Bar despite being a seasonal/weather-dependent space — worth protecting patio staffing on peak weekends.</div>
+    </div>
+  </div>
+
+  <footer>Built by Isaiah Porter · Power BI-style analysis from Toast POS export, June 2026</footer>
+</main>
+
+<script>
+try {
+  var DOW_COLORS = { Friday:"#B99A57", Saturday:"#C1793C", Sunday:"#8E4A62" };
+
+  var dailySales = [
+    { date:"6/5", dow:"Friday", net:446.33, checks:17, guests:24 },
+    { date:"6/6", dow:"Saturday", net:2172.73, checks:68, guests:95 },
+    { date:"6/7", dow:"Sunday", net:2939.87, checks:73, guests:113 },
+    { date:"6/12", dow:"Friday", net:281.50, checks:9, guests:15 },
+    { date:"6/13", dow:"Saturday", net:5630.16, checks:154, guests:186 },
+    { date:"6/14", dow:"Sunday", net:2604.93, checks:72, guests:111 },
+    { date:"6/19", dow:"Friday", net:478.80, checks:15, guests:27 },
+    { date:"6/20", dow:"Saturday", net:2952.83, checks:81, guests:122 },
+    { date:"6/21", dow:"Sunday", net:3040.23, checks:72, guests:148 },
+    { date:"6/26", dow:"Friday", net:610.48, checks:18, guests:23 },
+    { date:"6/27", dow:"Saturday", net:6125.08, checks:168, guests:231 },
+    { date:"6/28", dow:"Sunday", net:4788.46, checks:136, guests:222 },
+  ];
+
+  var weeklyTotals = [
+    { week:"Wk 1 (6/5–6/7)", net:5558.93 },
+    { week:"Wk 2 (6/12–6/14)", net:8516.59 },
+    { week:"Wk 3 (6/19–6/21)", net:6471.86 },
+    { week:"Wk 4 (6/26–6/28)", net:11524.02 },
+  ];
+
+  var revenueCenters = [
+    { name:"Dining Room", net:22690.21, pct:70.8, color:"#C1793C" },
+    { name:"Patio", net:5461.31, pct:17.0, color:"#8C9A7B" },
+    { name:"Bar", net:3919.88, pct:12.2, color:"#5B7380" },
+  ];
+
+  function fmt0(n) { return "$" + n.toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0}); }
+  function fmt2(n) { return "$" + n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}); }
+
+  // Daily bars
+  var dailyBars = document.getElementById('dailyBars');
+  var maxNet = Math.max.apply(null, dailySales.map(function(d){ return d.net; }));
+  dailySales.forEach(function(d){
+    var col = document.createElement('div');
+    col.className = 'bar-col';
+    var heightPct = (d.net / maxNet) * 100;
+    col.innerHTML =
+      '<div class="bar-val">' + fmt0(d.net) + '</div>' +
+      '<div class="bar" style="height:' + heightPct + '%;background:' + DOW_COLORS[d.dow] + '" title="' + d.date + ' ' + d.dow + ': ' + fmt2(d.net) + ' · ' + d.checks + ' checks · ' + d.guests + ' guests"></div>' +
+      '<div class="bar-date">' + d.date + '</div>';
+    dailyBars.appendChild(col);
+  });
+
+  // Weekly momentum
+  var weeklyList = document.getElementById('weeklyList');
+  var maxWk = Math.max.apply(null, weeklyTotals.map(function(w){ return w.net; }));
+  weeklyTotals.forEach(function(w, i){
+    var prev = i > 0 ? weeklyTotals[i-1].net : null;
+    var change = prev ? ((w.net - prev) / prev) * 100 : null;
+    var row = document.createElement('div');
+    row.className = 'wk-row';
+    var changeHtml = '';
+    if (change !== null) {
+      var color = change >= 0 ? '#5C7A4F' : '#A8452C';
+      var arrow = change >= 0 ? '▲' : '▼';
+      changeHtml = '<span style="color:' + color + ';margin-left:8px;">' + arrow + ' ' + Math.abs(change).toFixed(0) + '%</span>';
+    }
+    row.innerHTML =
+      '<div class="wk-label"><span>' + w.week + '</span><span class="mono">' + fmt0(w.net) + changeHtml + '</span></div>' +
+      '<div class="wk-track"><div class="wk-fill" style="width:' + ((w.net/maxWk)*100) + '%"></div></div>';
+    weeklyList.appendChild(row);
+  });
+
+  // Revenue centers
+  var centerList = document.getElementById('centerList');
+  revenueCenters.forEach(function(c){
+    var row = document.createElement('div');
+    row.className = 'center-row';
+    row.innerHTML =
+      '<div style="display:flex;align-items:center;gap:8px;"><span class="dot" style="background:' + c.color + '"></span><span style="font-weight:600">' + c.name + '</span></div>' +
+      '<span class="mono">' + fmt0(c.net) + ' · ' + c.pct + '%</span>';
+    centerList.appendChild(row);
+  });
+
+} catch (e) {
+  document.body.insertAdjacentHTML('afterbegin',
+    '<div style="background:#FBF0DC;border:1px solid #E0C9A6;color:#B07A2E;padding:16px;margin:16px;border-radius:8px;font-family:monospace;font-size:13px;">Render error: ' + e.message + '</div>');
+}
+</script>
+</body>
+</html>

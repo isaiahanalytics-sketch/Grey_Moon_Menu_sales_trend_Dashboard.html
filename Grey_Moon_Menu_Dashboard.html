@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Grey Moon — Menu Performance — June 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2E2621; --paper:#EDE4CF; --card:#F7F1E4; --line:#D8CBAB; --linelight:#E3D8BC;
+    --muted:#6B6155; --mutedlight:#8A8072; --gold:#B7A87E;
+    --food:#C1793C; --liquor:#5B7380; --nabev:#8C9A7B; --wine:#8E4A62; --beer:#B99A57;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',Arial,sans-serif;background:var(--paper);color:var(--ink);}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--nabev);}
+  .serif{font-family:'Fraunces',Georgia,serif;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px;}
+  header{padding:40px 32px 28px;border-bottom:1px solid var(--line);}
+  h1{font-size:clamp(28px,4vw,42px);font-weight:600;margin:8px 0 6px;line-height:1.1;}
+  .sub{font-size:15px;color:var(--muted);}
+  .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-bottom:1px solid var(--line);}
+  .kpi{background:var(--paper);padding:20px 24px;}
+  .kpi .val{font-size:26px;font-weight:600;margin-top:4px;}
+  main{padding:32px;display:flex;flex-direction:column;gap:28px;}
+  .mix-bar{display:flex;height:28px;border-radius:6px;overflow:hidden;margin-bottom:16px;}
+  .legend{display:flex;flex-wrap:wrap;gap:10px 24px;}
+  .legend-item{display:flex;align-items:center;gap:8px;font-size:13px;}
+  .dot{width:10px;height:10px;border-radius:3px;display:inline-block;flex-shrink:0;}
+  .mono{font-family:'IBM Plex Mono',monospace;color:var(--muted);}
+  .grid2{display:grid;grid-template-columns:1fr 1.3fr;gap:24px;}
+  .mod-row{margin-bottom:10px;}
+  .mod-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:3px;}
+  .mod-track{background:var(--linelight);height:6px;border-radius:3px;}
+  .mod-fill{background:var(--nabev);height:6px;border-radius:3px;}
+  .item-row{margin-bottom:14px;}
+  .item-label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px;}
+  .item-label .nm{display:flex;align-items:center;gap:8px;}
+  .item-track{background:var(--linelight);height:10px;border-radius:3px;}
+  .item-fill{height:10px;border-radius:3px;}
+  .ticket{position:relative;background:#FBF7ED;border:1px dashed #B7A87E;border-radius:2px;font-family:'IBM Plex Mono',monospace;padding:18px 20px;max-height:280px;overflow-y:auto;}
+  .ticket-row{display:flex;justify-content:space-between;font-size:12.5px;padding:6px 0;border-bottom:1px dotted var(--line);}
+  .ticket-row:last-child{border-bottom:none;}
+  .callout{border:1px solid #E0C9A6;background:#FBF0DC;border-radius:10px;padding:16px 20px;display:flex;gap:14px;align-items:flex-start;}
+  .callout .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B07A2E;font-weight:600;margin-top:2px;white-space:nowrap;}
+  .callout p{font-size:13px;color:#5C4A2A;margin:0;}
+  footer{font-size:11px;color:var(--gold);font-family:'IBM Plex Mono',monospace;text-align:center;padding:8px 0 32px;}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr;}.kpi-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">JUNE 2026 · SERVICE REPORT</div>
+  <h1 class="serif">Grey Moon Breakfast &amp; Brunch</h1>
+  <div class="sub">Menu performance &amp; category mix · June 1 – June 30, 2026 · Source: Toast POS sales export</div>
+</header>
+
+<div class="kpi-grid">
+  <div class="kpi"><div class="eyebrow">Net Sales</div><div class="val serif">$32,071.40</div></div>
+  <div class="kpi"><div class="eyebrow">Food Revenue</div><div class="val serif">$23,027.20 · 71.8%</div></div>
+  <div class="kpi"><div class="eyebrow">Items Sold</div><div class="val serif">2,962</div></div>
+  <div class="kpi"><div class="eyebrow">Avg Item Price</div><div class="val serif">$11.08</div></div>
+</div>
+
+<main>
+
+  <div class="card">
+    <div class="eyebrow">REVENUE MIX</div>
+    <h2 class="serif" style="font-size:20px;font-weight:600;margin:0 0 18px;">Where the sales come from</h2>
+    <div class="mix-bar">
+      <div style="width:71.8%;background:var(--food)" title="Food: 71.8%"></div>
+      <div style="width:21.0%;background:var(--liquor)" title="Liquor: 21.0%"></div>
+      <div style="width:3.6%;background:var(--nabev)" title="NA Beverage: 3.6%"></div>
+      <div style="width:2.7%;background:var(--wine)" title="Wine: 2.7%"></div>
+      <div style="width:0.5%;background:var(--beer)" title="Bottled Beer: 0.5%"></div>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><span class="dot" style="background:var(--food)"></span><span style="font-weight:600">Food</span><span class="mono">$23,027.20 · 71.8%</span></div>
+      <div class="legend-item"><span class="dot" style="background:var(--liquor)"></span><span style="font-weight:600">Liquor</span><span class="mono">$6,739.44 · 21.0%</span></div>
+      <div class="legend-item"><span class="dot" style="background:var(--nabev)"></span><span style="font-weight:600">NA Beverage</span><span class="mono">$1,144.46 · 3.6%</span></div>
+      <div class="legend-item"><span class="dot" style="background:var(--wine)"></span><span style="font-weight:600">Wine</span><span class="mono">$869.50 · 2.7%</span></div>
+      <div class="legend-item"><span class="dot" style="background:var(--beer)"></span><span style="font-weight:600">Bottled Beer</span><span class="mono">$160.00 · 0.5%</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">TOP SELLERS</div>
+    <h2 class="serif" style="font-size:20px;font-weight:600;margin:0 0 4px;">Top 10 menu items by revenue</h2>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:20px;">
+      These 10 items — 10% of the food+drink menu — generated <strong style="color:var(--ink);">60.1% of all food revenue</strong> this month.
+    </div>
+    <div id="topItemsList"></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <div class="eyebrow">KITCHEN PREP</div>
+      <h2 class="serif" style="font-size:18px;font-weight:600;margin:0 0 16px;">Most-ordered sides &amp; mods</h2>
+      <div id="modsList"></div>
+      <div style="font-size:12px;color:var(--mutedlight);margin-top:14px;">Useful for prep par levels — scrambled eggs and mac &amp; cheese dominate side orders.</div>
+    </div>
+
+    <div>
+      <div class="eyebrow" style="color:var(--wine);margin-bottom:4px;">MENU RATIONALIZATION</div>
+      <h2 class="serif" style="font-size:18px;font-weight:600;margin:0 0 4px;">Cut-list candidates</h2>
+      <div style="font-size:13px;color:var(--muted);margin-bottom:12px;">
+        <strong style="color:var(--ink);">34.3%</strong> of food items (34 of 99) sold 3 units or fewer all month —
+        together just <strong style="color:var(--ink);">2.1%</strong> of food revenue. Trimming these
+        reduces prep complexity and food cost risk without meaningfully touching sales.
+      </div>
+      <div class="ticket" id="cutList"></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="tag">DATA CHECK</div>
+    <p>Four menu entries — "Test", "A", "F", "G" — appear to be POS test items ($0.01 each, 1–2 sold). Worth removing from the Toast menu builder so they don't skew future item-mix reports.</p>
+  </div>
+
+  <footer>Built by Isaiah Porter · Power BI-style analysis from Toast POS export, June 2026</footer>
+</main>
+
+<script>
+try {
+  var CATEGORY_COLORS = { Food:"#C1793C", Liquor:"#5B7380", "NA Beverage":"#8C9A7B", Wine:"#8E4A62", "Bottled Beer":"#B99A57" };
+
+  var topItems = [
+    { name:"Salmon Croquettes", category:"Food", net:1808.10 },
+    { name:"Bottomless Mimosa", category:"Liquor", net:1621.25 },
+    { name:"Meat N' Three", category:"Food", net:1570.81 },
+    { name:"Meat N' Two", category:"Food", net:1493.44 },
+    { name:"Chicken N' Waffles", category:"Food", net:1426.50 },
+    { name:"Lamb N' Eggs", category:"Food", net:1419.91 },
+    { name:"Fish N' Grits", category:"Food", net:1352.25 },
+    { name:"Shrimp N' Grits", category:"Food", net:1234.20 },
+    { name:"Oxtails N' Grits", category:"Food", net:1214.40 },
+    { name:"Steak N' Eggs", category:"Food", net:1200.00 },
+  ];
+
+  var modifiers = [
+    { name:"Scrambled", qty:281 }, { name:"Mac and Cheese", qty:148 }, { name:"Collard Greens", qty:88 },
+    { name:"Canned Yams", qty:81 }, { name:"Fried Chicken", qty:68 }, { name:"Fried Okra", qty:56 },
+    { name:"Bacon", qty:54 }, { name:"Rice and Gravy", qty:54 },
+  ];
+
+  var cutList = [
+    { name:"Smothered Baked Turkey Wing", qty:1, net:23.00 },
+    { name:"Chicken Waffle Strawberry Crunch", qty:1, net:17.00 },
+    { name:"Bourbon Glazed Salmon", qty:1, net:26.00 },
+    { name:"Veggie Croissant w/ Potatoes", qty:1, net:12.00 },
+    { name:"Tenders and Fries", qty:1, net:12.00 },
+    { name:"Grilled Cheese Sandwich", qty:1, net:4.99 },
+    { name:"Kids Tenders and Fries", qty:1, net:4.99 },
+    { name:"Gray Moon Burger", qty:2, net:36.00 },
+    { name:"Chicken Kabobs", qty:2, net:42.00 },
+    { name:"Roasted Brussel Sprouts", qty:2, net:8.00 },
+    { name:"Loaded Seafood Fries", qty:3, net:54.00 },
+    { name:"Side Oxtails", qty:3, net:54.00 },
+  ];
+
+  function fmtMoney(n) {
+    return "$" + n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  // Top items as HTML bars
+  var topItemsList = document.getElementById('topItemsList');
+  var maxNet = Math.max.apply(null, topItems.map(function(d){ return d.net; }));
+  topItems.forEach(function(d){
+    var row = document.createElement('div');
+    row.className = 'item-row';
+    var color = CATEGORY_COLORS[d.category] || '#C1793C';
+    var pct = (d.net / maxNet) * 100;
+    row.innerHTML =
+      '<div class="item-label"><span class="nm"><span class="dot" style="background:' + color + '"></span>' + d.name + '</span>' +
+      '<span class="mono">' + fmtMoney(d.net) + '</span></div>' +
+      '<div class="item-track"><div class="item-fill" style="width:' + pct + '%;background:' + color + '"></div></div>';
+    topItemsList.appendChild(row);
+  });
+
+  // Modifiers
+  var modsList = document.getElementById('modsList');
+  var maxMod = modifiers[0].qty;
+  modifiers.forEach(function(m){
+    var row = document.createElement('div');
+    row.className = 'mod-row';
+    row.innerHTML =
+      '<div class="mod-label"><span>' + m.name + '</span><span class="mono">' + m.qty + '×</span></div>' +
+      '<div class="mod-track"><div class="mod-fill" style="width:' + ((m.qty/maxMod)*100) + '%"></div></div>';
+    modsList.appendChild(row);
+  });
+
+  // Cut list
+  var cutListEl = document.getElementById('cutList');
+  cutList.forEach(function(item){
+    var row = document.createElement('div');
+    row.className = 'ticket-row';
+    row.innerHTML = '<span>' + item.name + '</span><span style="color:#8A8072;white-space:nowrap;margin-left:12px;">' + item.qty + '× · ' + fmtMoney(item.net) + '</span>';
+    cutListEl.appendChild(row);
+  });
+  var more = document.createElement('div');
+  more.style.cssText = 'text-align:center;font-size:11px;color:#B7A87E;margin-top:10px;';
+  more.textContent = '+ 22 more items at this velocity';
+  cutListEl.appendChild(more);
+
+} catch (e) {
+  document.body.insertAdjacentHTML('afterbegin',
+    '<div style="background:#FBF0DC;border:1px solid #E0C9A6;color:#B07A2E;padding:16px;margin:16px;border-radius:8px;font-family:monospace;font-size:13px;">Render error: ' + e.message + '</div>');
+}
+</script>
+</body>
+</html>
